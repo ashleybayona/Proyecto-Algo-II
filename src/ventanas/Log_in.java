@@ -15,6 +15,7 @@ public class Log_in extends javax.swing.JFrame {
      */
     public Log_in() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

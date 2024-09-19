@@ -14,6 +14,7 @@ public class usuarioAdmin extends javax.swing.JFrame {
     
     public usuarioAdmin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

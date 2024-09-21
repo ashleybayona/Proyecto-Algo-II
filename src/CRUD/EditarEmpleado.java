@@ -4,6 +4,9 @@
  */
 package CRUD;
 
+import Controlador.Empleados;
+import Controlador.Principal;
+
 /**
  *
  * @author ashle
@@ -157,16 +160,14 @@ public class EditarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_bttCancelarEditActionPerformed
 
     private void bttGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttGuardarActionPerformed
-        //FUNCIONALIDAD DE AGREGAR EMPLEADO
-        //ADQUIRIR TEXTO PUESTO EN CAMPOS
+        //para tener info q editar
+        Empleados emp1 = new Empleados("99999999", "Ashley", "Bayona", "999999999", "user1");
+        Empleados emp2 = new Empleados("99999998", "Elizabeth", "Vera", "999999998", "user2");
+        Empleados emp3 = new Empleados("99999997", "Ola", "Chau", "999999997", "user3");
         
-        
-        //INSTANCIAR EMPLEADO POR EL CONSTRUCTOR DE EMPLEADOS
-        
-        
-        //AGREGAR EMPLEADO AL ARRAYLIST EMPLEADOS
-        
-        this.dispose();
+        Principal.empleados.add(emp1);
+        Principal.empleados.add(emp2);
+        Principal.empleados.add(emp3);
     }//GEN-LAST:event_bttGuardarActionPerformed
 
     private void dniFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldEditActionPerformed

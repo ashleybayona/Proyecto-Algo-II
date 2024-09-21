@@ -42,4 +42,26 @@ public class Empleados {
     public boolean validarDatos(String dni, String telef){
         return validarDNI(dni) && validarContacto(telef);
     }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public String getNombres() {
+        return Nombres;
+    }
+
+    public String getApellidos() {
+        return Apellidos;
+    }
+
+    public String getContacto() {
+        return Contacto;
+    }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+    
+    
 }

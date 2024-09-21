@@ -4,6 +4,12 @@
  */
 package CRUD;
 
+import Controlador.Empleados;
+import Controlador.Principal;
+import static Controlador.Principal.empleados;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ashle
@@ -16,6 +22,19 @@ public class EliminarEmpleado extends javax.swing.JFrame {
     public EliminarEmpleado() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Eliminar empleado");
+        
+        //para que haya info q borrar
+        llenarListaPrueba();
+        
+        //para que al dar enter se busquen los datos
+        dniFieldElim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                rellenarDatos();
+            }
+        }
+        });
     }
 
     /**
@@ -35,7 +54,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         contactoFieldElim = new javax.swing.JTextField();
         contraFieldElim = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        dniFieldElim = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -69,9 +88,9 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("DNI:");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        dniFieldElim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                dniFieldElimActionPerformed(evt);
             }
         });
 
@@ -111,7 +130,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(66, 66, 66)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField5)
+                            .addComponent(dniFieldElim)
                             .addComponent(nombreFieldElim)
                             .addComponent(apellidoFieldElim)
                             .addComponent(contactoFieldElim)
@@ -129,7 +148,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dniFieldElim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -164,22 +183,22 @@ public class EliminarEmpleado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bttCancelarElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCancelarElimActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_bttCancelarElimActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void dniFieldElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldElimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_dniFieldElimActionPerformed
 
     private void nombreFieldElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldElimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreFieldElimActionPerformed
 
     private void bttEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEliminarActionPerformed
-        
-        
-        
-        this.dispose();
+        //pasos eliminar: buscar el dni, en caso lo encuentre que se llenen los campos restantes y al
+        //darle click a eliminar que salga una ventana de confirmación, en caso no se encuentre el dni
+        //que salga una ventana de dni inválido
+        eliminarEmpleado();
     }//GEN-LAST:event_bttEliminarActionPerformed
 
     /**
@@ -223,13 +242,72 @@ public class EliminarEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton bttEliminar;
     private javax.swing.JTextField contactoFieldElim;
     private javax.swing.JTextField contraFieldElim;
+    private javax.swing.JTextField dniFieldElim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField nombreFieldElim;
     // End of variables declaration//GEN-END:variables
+
+    private Empleados buscarDni(String dni){
+        Empleados empleadoEncontrado = null;
+        int i = 0;
+        while(i < Principal.empleados.size() && !Principal.empleados.get(i).getDNI().equalsIgnoreCase(dni)){
+            i++;
+        }
+        if(i < Principal.empleados.size()){
+            empleadoEncontrado = Principal.empleados.get(i);
+        }
+        return empleadoEncontrado;
+    }
+    
+    private void rellenarDatos(){
+        //recoger dni ingresado
+        String dni = dniFieldElim.getText();
+        
+        //if else buscar dni
+        if(buscarDni(dni) != null){
+            Empleados empleadoDatos = buscarDni(dni);
+            //que se rellenen los datos
+            nombreFieldElim.setText(empleadoDatos.getNombres());
+            apellidoFieldElim.setText(empleadoDatos.getApellidos());
+            contactoFieldElim.setText(empleadoDatos.getContacto());
+            contraFieldElim.setText(empleadoDatos.getContrasena());
+        }else {
+            // Mostrar un mensaje de error si no se encuentra el DNI
+            JOptionPane.showMessageDialog(this, "DNI inválido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void eliminarEmpleado(){
+        String dni = dniFieldElim.getText();
+        Empleados empleadoAEliminar = buscarDni(dni);
+        
+        int respuesta = JOptionPane.showConfirmDialog(this, 
+                "¿Está seguro que desea eliminar al empleado?", "Confirmación", 
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(respuesta == JOptionPane.YES_OPTION){
+            System.out.println(Principal.empleados);
+            empleados.remove(empleadoAEliminar);
+            System.out.println(Principal.empleados);
+            AgregarEmpleado.vaciarCampos(this);
+        } else {
+            AgregarEmpleado.vaciarCampos(this);
+            return;
+        }
+    }
+    
+    public static void llenarListaPrueba(){
+        Empleados emp1 = new Empleados("99999999", "Ashley", "Bayona", "999999999", "user1");
+        Empleados emp2 = new Empleados("99999998", "Elizabeth", "Vera", "999999998", "user2");
+        Empleados emp3 = new Empleados("99999997", "Ola", "Chau", "999999997", "user3");
+        
+        Principal.empleados.add(emp1);
+        Principal.empleados.add(emp2);
+        Principal.empleados.add(emp3);
+    }
 }

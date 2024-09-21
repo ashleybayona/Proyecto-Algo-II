@@ -42,4 +42,42 @@ public class Empleados {
     public boolean validarDatos(String dni, String telef){
         return validarDNI(dni) && validarContacto(telef);
     }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public String getNombres() {
+        return Nombres;
+    }
+
+    public String getApellidos() {
+        return Apellidos;
+    }
+
+    public String getContacto() {
+        return Contacto;
+    }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+
+    public void setNombres(String Nombres) {
+        this.Nombres = Nombres;
+    }
+
+    public void setApellidos(String Apellidos) {
+        this.Apellidos = Apellidos;
+    }
+
+    public void setContacto(String Contacto) {
+        this.Contacto = Contacto;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }
+    
+    
 }

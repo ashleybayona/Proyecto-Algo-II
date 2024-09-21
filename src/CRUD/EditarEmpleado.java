@@ -4,6 +4,11 @@
  */
 package CRUD;
 
+import Controlador.Empleados;
+import Controlador.Principal;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ashle
@@ -16,6 +21,17 @@ public class EditarEmpleado extends javax.swing.JFrame {
     public EditarEmpleado() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Editar empleado");
+        
+        EliminarEmpleado.llenarListaPrueba();
+        
+        dniFieldEdit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                rellenarDatos();
+            }
+        }
+        });
     }
 
     /**
@@ -157,16 +173,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_bttCancelarEditActionPerformed
 
     private void bttGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttGuardarActionPerformed
-        //FUNCIONALIDAD DE AGREGAR EMPLEADO
-        //ADQUIRIR TEXTO PUESTO EN CAMPOS
-        
-        
-        //INSTANCIAR EMPLEADO POR EL CONSTRUCTOR DE EMPLEADOS
-        
-        
-        //AGREGAR EMPLEADO AL ARRAYLIST EMPLEADOS
-        
-        this.dispose();
+        editarEmpleado();
     }//GEN-LAST:event_bttGuardarActionPerformed
 
     private void dniFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldEditActionPerformed
@@ -223,4 +230,61 @@ public class EditarEmpleado extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField nombreFieldEdit;
     // End of variables declaration//GEN-END:variables
+
+    private Empleados buscarDni(String dni){
+        Empleados empleadoEncontrado = null;
+        int i = 0;
+        while(i < Principal.empleados.size() && !Principal.empleados.get(i).getDNI().equalsIgnoreCase(dni)){
+            i++;
+        }
+        if(i < Principal.empleados.size()){
+            empleadoEncontrado = Principal.empleados.get(i);
+        }
+        return empleadoEncontrado;
+    }
+    
+    private void rellenarDatos(){
+        //recoger dni ingresado
+        String dni = dniFieldEdit.getText();
+        
+        //if else buscar dni
+        if(buscarDni(dni) != null){
+            Empleados empleadoDatos = buscarDni(dni);
+            //que se rellenen los datos
+            nombreFieldEdit.setText(empleadoDatos.getNombres());
+            apellidoFieldEdit.setText(empleadoDatos.getApellidos());
+            contactoFieldEdit.setText(empleadoDatos.getContacto());
+            contraFieldEdit.setText(empleadoDatos.getContrasena());
+        }else {
+            // Mostrar un mensaje de error si no se encuentra el DNI
+            JOptionPane.showMessageDialog(this, "DNI inválido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void editarEmpleado(){
+        String dni = dniFieldEdit.getText();
+        Empleados empleadoAEditar = buscarDni(dni);
+        
+        String nombres = nombreFieldEdit.getText();
+        String apellidos = apellidoFieldEdit.getText();
+        String contacto = contactoFieldEdit.getText();
+        String contrasena = contraFieldEdit.getText();
+        
+        if(nombres.isEmpty() || apellidos.isEmpty() || contacto.isEmpty() || contrasena.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        System.out.println(empleadoAEditar);
+        
+        empleadoAEditar.setNombres(nombres);
+        empleadoAEditar.setApellidos(apellidos);
+        empleadoAEditar.setContacto(contacto);
+        empleadoAEditar.setContrasena(contrasena);
+        
+        JOptionPane.showMessageDialog(this, "Información editada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        AgregarEmpleado.vaciarCampos(this);
+        
+        System.out.println(empleadoAEditar);
+    }
 }

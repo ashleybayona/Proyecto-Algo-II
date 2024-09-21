@@ -27,6 +27,19 @@ public class Empleados {
     @Override
     public String toString() {
         return "Empleados{" + "DNI=" + DNI + ", Nombres=" + Nombres + ", Apellidos=" + Apellidos + ", Contacto=" + Contacto + ", Contrasena=" + Contrasena + '}';
+    }    
+    
+    private boolean validarDNI(String dni){
+        int longitud_dni = dni.length();
+        return longitud_dni == 8;
     }
     
+    private boolean validarContacto(String telef){
+        int longitud_telef= telef.length();
+        return longitud_telef == 9;
+    }
+    
+    public boolean validarDatos(String dni, String telef){
+        return validarDNI(dni) && validarContacto(telef);
+    }
 }

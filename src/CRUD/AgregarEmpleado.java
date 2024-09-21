@@ -21,6 +21,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     
     public AgregarEmpleado() {
         initComponents();
+        //setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
@@ -74,6 +75,12 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         bttAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bttAgregarActionPerformed(evt);
+            }
+        });
+
+        contraFieldAgre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraFieldAgreActionPerformed(evt);
             }
         });
 
@@ -161,30 +168,19 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
     private void bttAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttAgregarActionPerformed
         //FUNCIONALIDAD DE AGREGAR EMPLEADO
-        //ADQUIRIR TEXTO PUESTO EN CAMPOS
-        String dni = dniFieldAgreg.getText();
-        String nombres = nombreFieldAgre.getText();
-        String apellidos = apellidoFieldAgre.getText();
-        String contacto = contactoFieldAgre.getText();
-        String contrasena = contraFieldAgre.getText();
-        
-        //VALIDAR CAMPOS
-        if(dni.isEmpty() || nombres.isEmpty() || apellidos.isEmpty() || contacto.isEmpty() || contrasena.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+        try {
+            agregarEmpleado(); 
+            //para ver si se agregan
+            System.out.println(Principal.empleados);
+            vaciarCampos();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        //INSTANCIAR EMPLEADO POR EL CONSTRUCTOR DE EMPLEADOS
-        Empleados empleado = new Empleados(dni, nombres, apellidos, contacto, contrasena);
-        
-        //AGREGAR EMPLEADO AL ARRAYLIST EMPLEADOS
-        Principal.empleados.add(empleado);
-        
-        //MENSAJE DE CONFIRMACION
-        JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        
-        this.dispose();
     }//GEN-LAST:event_bttAgregarActionPerformed
+
+    private void contraFieldAgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraFieldAgreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraFieldAgreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,4 +232,33 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nombreFieldAgre;
     // End of variables declaration//GEN-END:variables
+
+    private void agregarEmpleado(){
+        //get de los campos rellenados
+        String dni = dniFieldAgreg.getText();
+        String nombres = nombreFieldAgre.getText();
+        String apellidos = apellidoFieldAgre.getText();
+        String contacto = contactoFieldAgre.getText();
+        String contrasena = contraFieldAgre.getText();
+        
+        //verificar que no estén vacíos
+        if(dni.isEmpty() || nombres.isEmpty() || apellidos.isEmpty() || contacto.isEmpty() || contrasena.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        //agregarlos al array
+        Empleados empleado = new Empleados(dni, nombres, apellidos, contacto, contrasena);
+        Principal.empleados.add(empleado);
+        
+        JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    private void vaciarCampos(){
+        dniFieldAgreg.setText("");;
+        nombreFieldAgre.setText("");;
+        apellidoFieldAgre.setText("");;
+        contactoFieldAgre.setText("");;
+        contraFieldAgre.setText("");;
+    }
 }

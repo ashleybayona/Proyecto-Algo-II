@@ -301,7 +301,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         }
     }
     
-    private void llenarListaPrueba(){
+    public static void llenarListaPrueba(){
         Empleados emp1 = new Empleados("99999999", "Ashley", "Bayona", "999999999", "user1");
         Empleados emp2 = new Empleados("99999998", "Elizabeth", "Vera", "999999998", "user2");
         Empleados emp3 = new Empleados("99999997", "Ola", "Chau", "999999997", "user3");

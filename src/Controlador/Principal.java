@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
 import java.util.ArrayList;
 
 /**
@@ -12,14 +13,14 @@ import java.util.ArrayList;
  */
 public class Principal {
     
-    public static ArrayList<Empleados> empleados = new ArrayList<>();
+    public static ArrayList<Empleado> empleados = new ArrayList<>();
     
     public static void main(String args[]){
         //ArrayList<Empleados> empleados = new ArrayList<>();
         
-        Empleados emp1 = new Empleados("99999999", "Ashley", "Bayona", "999999999", "user1");
-        Empleados emp2 = new Empleados("99999998", "Elizabeth", "Vera", "999999998", "user2");
-        Empleados emp3 = new Empleados("99999997", "Ola", "Chau", "999999997", "user3");
+        Empleado emp1 = new Empleado("99999999", "Ashley", "Bayona", "999999999", "user1");
+        Empleado emp2 = new Empleado("99999998", "Elizabeth", "Vera", "999999998", "user2");
+        Empleado emp3 = new Empleado("99999997", "Ola", "Chau", "999999997", "user3");
         
         empleados.add(emp1);
         empleados.add(emp2);

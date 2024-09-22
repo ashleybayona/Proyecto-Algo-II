@@ -4,7 +4,7 @@
  */
 package CRUD;
 
-import Controlador.Empleados;
+import Modelo.Empleado;
 import Controlador.Principal;
 import java.awt.Component;
 import java.awt.Container;
@@ -257,7 +257,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         }
         
         //agregarlos al array
-        Empleados empleado = new Empleados(dni, nombres, apellidos, contacto, contrasena);
+        Empleado empleado = new Empleado(dni, nombres, apellidos, contacto, contrasena);
         Principal.empleados.add(empleado);
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);

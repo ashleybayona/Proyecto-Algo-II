@@ -176,7 +176,7 @@ public class LogIn extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usuario = txtUsuario.getText();
         String contrasena = txtContrasena.getText();
-        
+
         if (usuario.equals("123456789") && contrasena.equals("algoII")) {
             UsuarioAdmin ventanaAdmin = new UsuarioAdmin();
             ventanaAdmin.setVisible(true);
@@ -185,7 +185,9 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        UsuarioCliente ventanaCliente = new UsuarioCliente();
+        ventanaCliente.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

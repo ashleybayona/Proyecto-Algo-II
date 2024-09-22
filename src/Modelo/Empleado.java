@@ -9,11 +9,11 @@ import VistaVentanas.TablaEmpleados;
  * @author ashle
  */
 public class Empleado {
-     private String DNI;
-     private String Nombres;
-     private String Apellidos;
-     private String Contacto;
-     private String Contrasena;
+    private String DNI;
+    private String Nombres;
+    private String Apellidos;
+    private String Contacto;
+    private String Contrasena;
 
     public Empleado(String DNI, String Nombres, String Apellidos, String Contacto, String Contrasena) {
         //darle validación a cada campo
@@ -78,6 +78,4 @@ public class Empleado {
     public void setContrasena(String Contrasena) {
         this.Contrasena = Contrasena;
     }
-    
-    
 }

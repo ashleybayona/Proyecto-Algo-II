@@ -9,7 +9,6 @@ import Controlador.Principal;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -30,10 +29,10 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         contraFieldAgre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                agregarEmpleado();
+                if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                    agregarEmpleado();
+                }
             }
-        }
         });
     }
 
@@ -185,6 +184,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        this.dispose();
     }//GEN-LAST:event_bttAgregarActionPerformed
 
     private void contraFieldAgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraFieldAgreActionPerformed
@@ -269,16 +269,16 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     }
     
     public static void vaciarCampos(Container container) {
-    // Recorre todos los componentes del contenedor
-    for (Component c : container.getComponents()) {
-        // Si es un JTextField, lo vacía
-        if (c instanceof JTextField) {
-            ((JTextField) c).setText("");
+        // Recorre todos los componentes del contenedor
+        for (Component c : container.getComponents()) {
+            // Si es un JTextField, lo vacía
+            if (c instanceof JTextField) {
+                ((JTextField) c).setText("");
+            }
+            // Si el componente es un contenedor (como JPanel), llamamos recursivamente
+            if (c instanceof Container) {
+                vaciarCampos((Container) c);
+            }
         }
-        // Si el componente es un contenedor (como JPanel), llamamos recursivamente
-        if (c instanceof Container) {
-            vaciarCampos((Container) c);
-        }
-    }
-}
+    }   
 }

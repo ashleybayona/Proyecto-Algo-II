@@ -36,13 +36,8 @@ public class Producto {
         return longitud_id == 5;
     }
     
-    private boolean validarPrecioV(String telef){
-        int longitud_telef= telef.length();
-        return longitud_telef == 9;
-    }
-    
-    public boolean validarDatos(String id, String telef){
-        return validarID(id) && validarPrecioV(telef);
+    public boolean validarDatos(String id){
+        return validarID(id);
     }
 
     public String getID() {
@@ -88,5 +83,4 @@ public class Producto {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
-    
 }

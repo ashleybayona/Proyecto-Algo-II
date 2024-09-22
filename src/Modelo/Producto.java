@@ -60,7 +60,7 @@ public class Producto {
         return Stock;
     }
 
-    public String getDescripcion() {
+    public String getDesc() {
         return Descripcion;
     }
 
@@ -80,7 +80,7 @@ public class Producto {
         this.Stock = Stock;
     }
 
-    public void setDescripcion(String Descripcion) {
+    public void setDesc(String Descripcion) {
         this.Descripcion = Descripcion;
     }
 }

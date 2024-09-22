@@ -17,6 +17,7 @@ public class UsuarioCliente extends javax.swing.JFrame {
     
     public UsuarioCliente() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

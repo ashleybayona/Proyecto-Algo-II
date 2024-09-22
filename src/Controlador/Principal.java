@@ -15,11 +15,13 @@ public class Principal {
     
     public static ArrayList<Empleado> empleados = new ArrayList<>();
     public static ArrayList<Proveedor> proveedores = new ArrayList<>();
+    public static ArrayList<Producto> productos = new ArrayList<>();
     
     public static void main(String args[]){
         //ArrayList<Empleados> empleados = new ArrayList<>();
          
         System.out.println(empleados);
         System.out.println(proveedores);
+        System.out.println(productos);
     }
 }

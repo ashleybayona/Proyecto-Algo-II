@@ -16,6 +16,7 @@ public class UsuarioEmpleado extends javax.swing.JFrame {
     JpanelLoader jpload = new JpanelLoader();
     public UsuarioEmpleado() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

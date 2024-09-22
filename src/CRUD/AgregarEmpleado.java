@@ -185,6 +185,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        this.dispose();
     }//GEN-LAST:event_bttAgregarActionPerformed
 
     private void contraFieldAgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraFieldAgreActionPerformed

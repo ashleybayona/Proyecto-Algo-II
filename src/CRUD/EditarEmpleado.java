@@ -174,6 +174,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
 
     private void bttGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttGuardarActionPerformed
         editarEmpleado();
+        this.dispose();
     }//GEN-LAST:event_bttGuardarActionPerformed
 
     private void dniFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldEditActionPerformed

@@ -199,6 +199,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         //darle click a eliminar que salga una ventana de confirmación, en caso no se encuentre el dni
         //que salga una ventana de dni inválido
         eliminarEmpleado();
+        this.dispose();
     }//GEN-LAST:event_bttEliminarActionPerformed
 
     /**

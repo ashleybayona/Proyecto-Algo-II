@@ -12,21 +12,23 @@ public class Empleado {
     private String DNI;
     private String Nombres;
     private String Apellidos;
+    private String Puesto;
     private String Contacto;
     private String Contrasena;
 
-    public Empleado(String DNI, String Nombres, String Apellidos, String Contacto, String Contrasena) {
+    public Empleado(String DNI, String Nombres, String Apellidos, String Puesto, String Contacto, String Contrasena) {
         //darle validación a cada campo
         this.DNI = DNI;
         this.Nombres = Nombres;
         this.Apellidos = Apellidos;
+        this.Puesto = Puesto;
         this.Contacto = Contacto;
         this.Contrasena = Contrasena;
     }
 
     @Override
     public String toString() {
-        return "Empleados{" + "DNI=" + DNI + ", Nombres=" + Nombres + ", Apellidos=" + Apellidos + ", Contacto=" + Contacto + ", Contrasena=" + Contrasena + '}';
+        return "Empleados{" + "DNI=" + DNI + ", Nombres=" + Nombres + ", Apellidos=" + Apellidos + ", Puesto de trabajo=" + Puesto + ", Contacto=" + Contacto + ", Contrasena=" + Contrasena + '}';
     }    
     
     private boolean validarDNI(String dni){
@@ -55,6 +57,10 @@ public class Empleado {
         return Apellidos;
     }
 
+    public String getPuesto() {
+        return Puesto;
+    }
+
     public String getContacto() {
         return Contacto;
     }
@@ -69,6 +75,10 @@ public class Empleado {
 
     public void setApellidos(String Apellidos) {
         this.Apellidos = Apellidos;
+    }
+
+    public void setPuesto(String Puesto) {
+        this.Puesto = Puesto;
     }
 
     public void setContacto(String Contacto) {

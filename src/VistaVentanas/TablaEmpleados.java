@@ -42,11 +42,11 @@ public class TablaEmpleados extends javax.swing.JPanel {
 
             },
             new String [] {
-                "DNI", "Nombre", "Apellido", "Contacto", "Contraseña"
+                "DNI", "Nombre", "Apellido", "Puesto", "Contacto", "Contraseña"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class, java.lang.Object.class
+                java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -60,6 +60,7 @@ public class TablaEmpleados extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N

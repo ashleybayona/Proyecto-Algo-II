@@ -22,7 +22,7 @@ public class EditarProveedor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Editar proveedor");
         
-        //EliminarProveedor.llenarListaPrueba();
+        EliminarProveedor.llenarListaPrueba();
         
         rucField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

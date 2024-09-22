@@ -28,9 +28,9 @@ public class Proveedor {
         return "Proveedores{" + "RUC=" + RUC + ", RazSocial=" + RazSocial + ", Marca=" + Marca + ", Contacto=" + Contacto + ", Direccion=" + Direccion + '}';
     }    
     
-    private boolean validarRUC(String dni){
-        int longitud_dni = dni.length();
-        return longitud_dni == 11;
+    private boolean validarRUC(String ruc){
+        int longitud_ruc = ruc.length();
+        return longitud_ruc == 11;
     }
     
     private boolean validarContacto(String telef){

@@ -9,12 +9,12 @@ package Modelo;
  * @author SEGURIDAD
  */
 public class Producto {
-     private String ID;
-     private String Proveedor;
-     private String PrecioC;
-     private String PrecioV;
-     private String Stock;
-     private String Descripcion;
+    private String ID;
+    private String Proveedor;
+    private String PrecioC;
+    private String PrecioV;
+    private String Stock;
+    private String Descripcion;
 
     public Producto(String ID, String Proveedor, String PrecioC, String PrecioV, String Stock, String Descripcion) {
         //darle validación a cada campo

@@ -1,5 +1,6 @@
 
 package VistaVentanas;
+import CRUD.EditarEmpleado;
 import CRUD.*;
 /**
  *

@@ -106,7 +106,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         jLabel4.setText("Contacto:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("Puesto:");
+        jLabel6.setText("Cargo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -1,7 +1,7 @@
 
 package VistaVentanas;
-import CRUD.EditarEmpleado;
 import CRUD.*;
+import javax.swing.JTable;
 /**
  *
  * @author SEGURIDAD
@@ -170,4 +170,7 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+    public JTable getJTable1() {
+        return jTable1;
+    }
 }

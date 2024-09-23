@@ -15,8 +15,19 @@ import VistaVentanas.*;
 public class Principal {
     
     public static ArrayList<Empleado> empleados = new ArrayList<>();
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+    
     public static ArrayList<Proveedor> proveedores = new ArrayList<>();
+    public ArrayList<Proveedor> getProveedores() {
+        return proveedores;
+    }
+    
     public static ArrayList<Producto> productos = new ArrayList<>();
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
     
     public LogIn login;
     

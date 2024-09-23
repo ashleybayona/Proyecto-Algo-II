@@ -57,7 +57,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        puestoFieldEdit = new javax.swing.JTextField();
+        puestoBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,7 +97,9 @@ public class EditarEmpleado extends javax.swing.JFrame {
         jLabel4.setText("Contacto:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("Puesto:");
+        jLabel6.setText("Cargo:");
+
+        puestoBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor(a)", "At. Cliente"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,24 +126,28 @@ public class EditarEmpleado extends javax.swing.JFrame {
                                     .addComponent(contraFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(25, 25, 25))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(25, 25, 25))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(25, 25, 25)))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(25, 25, 25)))
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(66, 66, 66)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(66, 66, 66)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(dniFieldEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                                    .addComponent(nombreFieldEdit)
-                                    .addComponent(apellidoFieldEdit)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)
-                                .addComponent(puestoFieldEdit)))
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(25, 25, 25)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(puestoBox, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(dniFieldEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                                        .addComponent(nombreFieldEdit)
+                                        .addComponent(apellidoFieldEdit)))))
                         .addGap(26, 26, 26))))
         );
         layout.setVerticalGroup(
@@ -161,10 +167,10 @@ public class EditarEmpleado extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(apellidoFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(puestoFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(puestoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -246,7 +252,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField nombreFieldEdit;
-    private javax.swing.JTextField puestoFieldEdit;
+    private javax.swing.JComboBox<String> puestoBox;
     // End of variables declaration//GEN-END:variables
 
     private Empleado buscarDni(String dni){
@@ -271,7 +277,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
             //que se rellenen los datos
             nombreFieldEdit.setText(empleadoDatos.getNombres());
             apellidoFieldEdit.setText(empleadoDatos.getApellidos());
-            puestoFieldEdit.setText(empleadoDatos.getPuesto());
+            puestoBox.setSelectedItem(empleadoDatos.getPuesto());
             contactoFieldEdit.setText(empleadoDatos.getContacto());
             contraFieldEdit.setText(empleadoDatos.getContrasena());
         }else {
@@ -286,7 +292,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
         
         String nombres = nombreFieldEdit.getText();
         String apellidos = apellidoFieldEdit.getText();
-        String puesto = puestoFieldEdit.getText();
+        String puesto = (String) puestoBox.getSelectedItem();
         String contacto = contactoFieldEdit.getText();
         String contrasena = contraFieldEdit.getText();
         

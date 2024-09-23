@@ -4,6 +4,7 @@ import CRUD.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Controlador.Principal;
+import Modelo.Empleado;
 /**
  *
  * @author SEGURIDAD
@@ -24,7 +25,6 @@ public class TablaEmpleados extends javax.swing.JPanel {
         modelo.addColumn("Cargo");
         modelo.addColumn("Contacto");
         modelo.addColumn("Contraseña");
-        actualizarTabla();
     }
 
     /**
@@ -167,6 +167,7 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AgregarEmpleado agrEmp = new AgregarEmpleado();
         agrEmp.setVisible(true);
+        actualizarTablaNueva();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -180,11 +181,18 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    public void actualizarTabla() {
-        while(modelo.getColumnCount()>0){
-            modelo.removeRow(0);
-        }
+    public void actualizarTablaNueva() {
+        modelo.setRowCount(0);
         
-        jTable1.setModel(modelo);
+        for (Empleado empleado : Principal.empleados) {
+            Object[] fila = new Object[6];
+            fila[0] = empleado.getDNI();
+            fila[1] = empleado.getNombres();
+            fila[2] = empleado.getApellidos();
+            fila[3] = empleado.getPuesto();
+            fila[4] = empleado.getContacto();
+            fila[5] = empleado.getContrasena();
+            modelo.addRow(fila); // Agregar fila al modelo de la tabla
+        }
     }
 }

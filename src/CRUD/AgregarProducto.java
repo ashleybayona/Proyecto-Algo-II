@@ -114,6 +114,11 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel6.setText("Descripción:");
 
         provBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        provBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                provBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +211,10 @@ public class AgregarProducto extends javax.swing.JFrame {
     private void descFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_descFieldActionPerformed
+
+    private void provBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_provBoxActionPerformed
 
     /**
      * @param args the command line arguments

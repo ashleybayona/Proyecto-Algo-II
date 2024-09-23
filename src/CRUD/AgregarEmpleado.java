@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import Controlador.Principal;
-import VistaVentanas.TablaEmpleados;
 
 /**
  *
@@ -265,7 +264,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField nombreFieldAgre;
     // End of variables declaration//GEN-END:variables
 
-    private void agregarEmpleado(){
+    public void agregarEmpleado(){
         //get de los campos rellenados
         String dni = dniFieldAgreg.getText();
         String nombres = nombreFieldAgre.getText();
@@ -286,9 +285,9 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
-        vaciarCampos(this);
+        tablaEmpleados.actualizarTablaNueva();
         
-        actualizarTablaNueva();
+        vaciarCampos(this);
         
         //para ver si se agregan
         System.out.println(Principal.empleados);
@@ -305,19 +304,6 @@ public class AgregarEmpleado extends javax.swing.JFrame {
             if (c instanceof Container) {
                 vaciarCampos((Container) c);
             }
-        }
-    }
-
-    private void actualizarTablaNueva() {
-        for (Empleado empleado : Principal.empleados) {
-            Object a[] = new Object[6];
-            a[0] = empleado.getDNI();
-            a[1] = empleado.getNombres();
-            a[2] = empleado.getApellidos();
-            a[3] = empleado.getPuesto();
-            a[4] = empleado.getContacto();
-            a[5] = empleado.getContrasena();
-            //aca deberia añadir pero ya no se :'p
         }
     }
 }

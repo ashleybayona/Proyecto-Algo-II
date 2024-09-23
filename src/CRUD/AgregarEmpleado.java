@@ -285,8 +285,6 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
-        tablaEmpleados.actualizarTablaNueva();
-        
         vaciarCampos(this);
         
         //para ver si se agregan

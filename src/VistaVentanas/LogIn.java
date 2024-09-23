@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package VistaVentanas;
-
+import Modelo.Empleado;
+import Controlador.Principal;
+import javax.swing.JOptionPane;
 /**
  *
  * @author SEGURIDAD
@@ -180,12 +182,14 @@ public class LogIn extends javax.swing.JFrame {
             UsuarioAdmin ventanaAdmin = new UsuarioAdmin();
             ventanaAdmin.setVisible(true);
             this.dispose();
+        } else {
+            inicioSesionEmpleado();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //UsuarioCliente ventanaCliente = new UsuarioCliente();
-        //ventanaCliente.setVisible(true);
+        UsuarioCliente ventanaCliente = new UsuarioCliente();
+        ventanaCliente.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -238,4 +242,32 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtContrasena;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private Empleado buscarEmpleado(String dni, String contrasena) {
+        Empleado empleadoEncontrado = null;
+        int i = 0;
+        while (i < Principal.empleados.size()) {
+            Empleado empleadoActual = Principal.empleados.get(i);
+            if (empleadoActual.getDNI().equalsIgnoreCase(dni) && empleadoActual.getContrasena().equals(contrasena)) {
+                empleadoEncontrado = empleadoActual;
+                break;
+            }
+            i++;
+        }
+        return empleadoEncontrado;
+    }
+
+    private void inicioSesionEmpleado() {
+        String dni = txtUsuario.getText();
+        String contrasena = txtContrasena.getText();
+
+        Empleado empleadoAIniciarSesion = buscarEmpleado(dni, contrasena);
+        if (empleadoAIniciarSesion != null) {
+            UsuarioEmpleado ventanaEmpleado = new UsuarioEmpleado();
+            ventanaEmpleado.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario o Contraseña inválidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

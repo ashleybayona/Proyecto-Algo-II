@@ -15,18 +15,27 @@ public class TablaEmpleados extends javax.swing.JPanel {
      * Creates new form tabla_empleados
      */
     
-    DefaultTableModel modelo = new DefaultTableModel();
-    
     public TablaEmpleados() {
         initComponents();
-        modelo.addColumn("DNI");
-        modelo.addColumn("Nombres");
-        modelo.addColumn("Apellidos");
-        modelo.addColumn("Cargo");
-        modelo.addColumn("Contacto");
-        modelo.addColumn("Contraseña");
     }
 
+    public void actualizarTabla() {
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
+        
+        for (Empleado empleado : Principal.empleados) {
+            String[] rowData = {
+                empleado.getDNI(),
+                empleado.getNombres(),
+                empleado.getApellidos(),
+                empleado.getPuesto(),
+                empleado.getContacto(),
+                empleado.getContrasena()
+            };
+            modelo.addRow(rowData);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,7 +176,6 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AgregarEmpleado agrEmp = new AgregarEmpleado();
         agrEmp.setVisible(true);
-        actualizarTablaNueva();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -181,19 +189,4 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    
-    public void actualizarTablaNueva() {
-        modelo.setRowCount(0);
-        
-        for (Empleado empleado : Principal.empleados) {
-            Object[] fila = new Object[6];
-            fila[0] = empleado.getDNI();
-            fila[1] = empleado.getNombres();
-            fila[2] = empleado.getApellidos();
-            fila[3] = empleado.getPuesto();
-            fila[4] = empleado.getContacto();
-            fila[5] = empleado.getContrasena();
-            modelo.addRow(fila); // Agregar fila al modelo de la tabla
-        }
-    }
 }

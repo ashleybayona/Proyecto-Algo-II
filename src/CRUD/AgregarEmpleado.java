@@ -287,6 +287,8 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         vaciarCampos(this);
         
+        Principal.tablaEmpleados.actualizarTabla();
+        
         //para ver si se agregan
         System.out.println(Principal.empleados);
     }

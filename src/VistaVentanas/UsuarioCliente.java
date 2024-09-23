@@ -4,6 +4,8 @@
  */
 package VistaVentanas;
 
+import Controlador.Principal;
+
 /**
  *
  * @author SEGURIDAD
@@ -169,6 +171,7 @@ public class UsuarioCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CatalogoCliente catCli = new CatalogoCliente();
         jpload.jPanelLoader(panelDatos, catCli);
+        System.out.println(Principal.productos);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

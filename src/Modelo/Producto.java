@@ -13,22 +13,26 @@ public class Producto {
     private String Proveedor;
     private String PrecioC;
     private String PrecioV;
+    private String Tipo;
+    private String Talla;
     private String Stock;
     private String Descripcion;
 
-    public Producto(String ID, String Proveedor, String PrecioC, String PrecioV, String Stock, String Descripcion) {
+    public Producto(String ID, String Proveedor, String PrecioC, String PrecioV, String Tipo, String Talla, String Stock, String Descripcion) {
         //darle validación a cada campo
         this.ID = ID;
         this.Proveedor = Proveedor;
         this.PrecioC = PrecioC;
         this.PrecioV = PrecioV;
+        this.Tipo = Tipo;
+        this.Talla = Talla;
         this.Stock = Stock;
         this.Descripcion = Descripcion;
     }
 
     @Override
     public String toString() {
-        return "Productos{" + "ID=" + ID + ", Proveedor=" + Proveedor + ", PrecioC=" + PrecioC + ", PrecioV=" + PrecioV + ", Stock=" + Stock + ", Descripcion=" + Descripcion + '}';
+        return "Productos{" + "ID=" + ID + ", Proveedor=" + Proveedor + ", PrecioC=" + PrecioC + ", PrecioV=" + PrecioV + ", Tipo=" + Tipo + ", Talla=" + Talla + ", Stock=" + Stock + ", Descripcion=" + Descripcion + '}';
     }    
     
     private boolean validarID(String id){
@@ -56,6 +60,14 @@ public class Producto {
         return PrecioV;
     }
 
+    public String Tipo() {
+        return Tipo;
+    }
+
+    public String Talla() {
+        return Talla;
+    }
+
     public String getStock() {
         return Stock;
     }
@@ -74,6 +86,14 @@ public class Producto {
 
     public void setPrecioV(String PrecioV) {
         this.PrecioV = PrecioV;
+    }
+
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
+    }
+
+    public void setTalla(String Talla) {
+        this.Talla = Talla;
     }
 
     public void setStock(String Stock) {

@@ -20,20 +20,32 @@ public class TablaEmpleados extends javax.swing.JPanel {
     }
 
     public void actualizarTabla() {
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel modelo = new DefaultTableModel() {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         modelo.setRowCount(0);
         
+        modelo.addColumn("DNI EMPLEADO");
+        modelo.addColumn("NOMBRE EMPLEADO");
+        modelo.addColumn("CONTACTO");
+        modelo.addColumn("CORREO PERSONAL");
+        modelo.addColumn("CORREO EMPRESA");
+        modelo.addColumn("CONTRASEÑA");
+        
         for (Empleado empleado : Principal.empleados) {
-            String[] rowData = {
+            modelo.addRow(new Object[]{
                 empleado.getDNI(),
                 empleado.getNombres(),
                 empleado.getApellidos(),
                 empleado.getPuesto(),
                 empleado.getContacto(),
                 empleado.getContrasena()
-            };
-            modelo.addRow(rowData);
+            });
         }
+
+        jTable1.setModel(modelo);
     }
     
     /**

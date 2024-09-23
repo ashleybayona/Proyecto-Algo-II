@@ -24,9 +24,6 @@ public class EliminarProveedor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Eliminar empleado");
         
-        //para que haya info q borrar
-        llenarListaPrueba();
-        
         //para que al dar enter se busquen los datos
         rucField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -273,15 +270,5 @@ public class EliminarProveedor extends javax.swing.JFrame {
             AgregarProveedor.vaciarCampos(this);
             return;
         }
-    }
-    
-    public static void llenarListaPrueba(){
-        Proveedor prov1 = new Proveedor("00000000000", "Ashley", "Bayona", "999999999", "user1");
-        Proveedor prov2 = new Proveedor("99999998888", "Elizabeth", "Vera", "999999998", "user2");
-        Proveedor prov3 = new Proveedor("99999997777", "Ola", "Chau", "999999997", "user3");
-        
-        Principal.proveedores.add(prov1);
-        Principal.proveedores.add(prov2);
-        Principal.proveedores.add(prov3);
     }
 }

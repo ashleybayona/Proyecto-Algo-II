@@ -23,7 +23,6 @@ public class Principal {
     
     public Principal () {
         login = new LogIn();
-        tablaEmpleados = new TablaEmpleados();
     }
     
     public void mostrarVentanaLogIn() {
@@ -33,13 +32,8 @@ public class Principal {
     public static void main(String args[]){
         //ArrayList<Empleados> empleados = new ArrayList<>();
          
-        System.out.println(empleados);
-        System.out.println(proveedores);
-        System.out.println(productos);
-        
+        tablaEmpleados = new TablaEmpleados();
         Principal principal = new Principal();
         principal.mostrarVentanaLogIn();
     }
 }
-
-

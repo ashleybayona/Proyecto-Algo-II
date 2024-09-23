@@ -24,9 +24,6 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Eliminar empleado");
         
-        //para que haya info q borrar
-        llenarListaPrueba();
-        
         //para que al dar enter se busquen los datos
         dniFieldElim.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -322,15 +319,5 @@ public class EliminarEmpleado extends javax.swing.JFrame {
             AgregarEmpleado.vaciarCampos(this);
             return;
         }
-    }
-    
-    public static void llenarListaPrueba(){
-        Empleado emp1 = new Empleado("99999999", "Ashley", "Bayona", "Vendedor", "999999999", "user1");
-        Empleado emp2 = new Empleado("99999998", "Elizabeth", "Vera", "Animadora", "999999998", "user2");
-        Empleado emp3 = new Empleado("99999997", "Ola", "Chau", "Vendedor", "999999997", "user3");
-        
-        Principal.empleados.add(emp1);
-        Principal.empleados.add(emp2);
-        Principal.empleados.add(emp3);
     }
 }

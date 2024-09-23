@@ -43,11 +43,11 @@ public class TablaProductos extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Proveedor", "Precio c.", "Precio v.", "Stock", "Descripción"
+                "ID", "Proveedor", "Precio c.", "Precio v.", "Tipo", "Talla", "Stock", "Descripción"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -61,6 +61,9 @@ public class TablaProductos extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
+            jTable1.getColumnModel().getColumn(6).setResizable(false);
+            jTable1.getColumnModel().getColumn(7).setResizable(false);
         }
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -154,8 +157,8 @@ public class TablaProductos extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AgregarProveedor agrProv = new AgregarProveedor();
-        agrProv.setVisible(true);
+        AgregarProducto agrProd = new AgregarProducto();
+        agrProd.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

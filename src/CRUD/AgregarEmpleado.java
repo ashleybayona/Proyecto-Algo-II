@@ -11,10 +11,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import Controlador.Principal;
 import VistaVentanas.TablaEmpleados;
-import Controlador.Principal;
-import javax.swing.JTable;
-import Controlador.Principal;
 
 /**
  *
@@ -30,6 +28,8 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Agregar empleado");
+        
+        
         
         contraFieldAgre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -288,6 +288,8 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         vaciarCampos(this);
         
+        actualizarTablaNueva();
+        
         //para ver si se agregan
         System.out.println(Principal.empleados);
     }
@@ -303,6 +305,19 @@ public class AgregarEmpleado extends javax.swing.JFrame {
             if (c instanceof Container) {
                 vaciarCampos((Container) c);
             }
+        }
+    }
+
+    private void actualizarTablaNueva() {
+        for (Empleado empleado : Principal.empleados) {
+            Object a[] = new Object[6];
+            a[0] = empleado.getDNI();
+            a[1] = empleado.getNombres();
+            a[2] = empleado.getApellidos();
+            a[3] = empleado.getPuesto();
+            a[4] = empleado.getContacto();
+            a[5] = empleado.getContrasena();
+            //aca deberia añadir pero ya no se :'p
         }
     }
 }

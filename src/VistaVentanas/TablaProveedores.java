@@ -2,6 +2,7 @@
 package VistaVentanas;
 import CRUD.EditarProveedor;
 import CRUD.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author SEGURIDAD
@@ -12,7 +13,7 @@ public class TablaProveedores extends javax.swing.JPanel {
      * Creates new form tabla_empleados
      */
     
-    JpanelLoader jpload = new JpanelLoader();
+    DefaultTableModel modelo = new DefaultTableModel();
     
     public TablaProveedores() {
         initComponents();

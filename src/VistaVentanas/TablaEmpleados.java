@@ -2,6 +2,8 @@
 package VistaVentanas;
 import CRUD.*;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import Controlador.Principal;
 /**
  *
  * @author SEGURIDAD
@@ -12,8 +14,17 @@ public class TablaEmpleados extends javax.swing.JPanel {
      * Creates new form tabla_empleados
      */
     
+    DefaultTableModel modelo = new DefaultTableModel();
+    
     public TablaEmpleados() {
         initComponents();
+        modelo.addColumn("DNI");
+        modelo.addColumn("Nombres");
+        modelo.addColumn("Apellidos");
+        modelo.addColumn("Cargo");
+        modelo.addColumn("Contacto");
+        modelo.addColumn("Contraseña");
+        actualizarTabla();
     }
 
     /**
@@ -168,7 +179,12 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-    public JTable getJTable1() {
-        return jTable1;
+
+    public void actualizarTabla() {
+        while(modelo.getColumnCount()>0){
+            modelo.removeRow(0);
+        }
+        
+        jTable1.setModel(modelo);
     }
 }

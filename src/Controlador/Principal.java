@@ -17,13 +17,17 @@ public class Principal {
     public static ArrayList<Empleado> empleados = new ArrayList<>();
     public static TablaEmpleados tablaEmpleados;
     public static ArrayList<Proveedor> proveedores = new ArrayList<>();
+    public static TablaProveedores tablaProveedores;
     public static ArrayList<Producto> productos = new ArrayList<>();
+    public static TablaProductos tablaProductos;
     
     public static LogIn login;
     
     public Principal () {
         login = new LogIn();
         tablaEmpleados = new TablaEmpleados();
+        tablaProveedores = new TablaProveedores();
+        tablaProductos = new TablaProductos();
     }
     
     public void mostrarVentanaLogIn() {

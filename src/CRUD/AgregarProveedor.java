@@ -242,7 +242,13 @@ public class AgregarProveedor extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Proveedor agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
+        // Actualiza la tabla de empleados
+        if (Principal.proveedores != null) {
+            Principal.tablaProveedores.cargarProveedores();
+        }
+        
         vaciarCampos(this);
+        
         System.out.println("Cant. proveedores cargados: " + Principal.proveedores.size());
         System.out.println(Principal.proveedores);
     }

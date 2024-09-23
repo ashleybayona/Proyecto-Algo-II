@@ -2,6 +2,8 @@
 package VistaVentanas;
 import CRUD.EditarProveedor;
 import CRUD.*;
+import Controlador.Principal;
+import Modelo.Proveedor;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -10,13 +12,18 @@ import javax.swing.table.DefaultTableModel;
 public class TablaProveedores extends javax.swing.JPanel {
 
     /**
-     * Creates new form tabla_empleados
+     * Creates new form tabla_proveedors
      */
     
     DefaultTableModel modelo = new DefaultTableModel();
     
     public TablaProveedores() {
         initComponents();
+        modelo.addColumn("RUC");
+        modelo.addColumn("Razón Social");
+        modelo.addColumn("Marca");
+        modelo.addColumn("Contacto");
+        modelo.addColumn("Dirección");
     }
 
     /**
@@ -31,14 +38,15 @@ public class TablaProveedores extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblProveedores = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(888, 421));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -54,13 +62,13 @@ public class TablaProveedores extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        jScrollPane1.setViewportView(tblProveedores);
+        if (tblProveedores.getColumnModel().getColumnCount() > 0) {
+            tblProveedores.getColumnModel().getColumn(0).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(1).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(2).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(3).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -87,6 +95,14 @@ public class TablaProveedores extends javax.swing.JPanel {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jButton4.setText("Actualizar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -96,6 +112,8 @@ public class TablaProveedores extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 899, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
@@ -112,7 +130,8 @@ public class TablaProveedores extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
@@ -160,14 +179,39 @@ public class TablaProveedores extends javax.swing.JPanel {
         agrProv.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        cargarProveedores();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblProveedores;
     // End of variables declaration//GEN-END:variables
+
+    public void cargarProveedores() {
+        
+        while (modelo.getRowCount()>0) {
+            modelo.removeRow(0);
+        }
+        
+        for (Proveedor proveedor : Principal.proveedores) {
+            Object prov[] = new Object[6];
+            prov[0] = proveedor.getRUC();
+            prov[1] = proveedor.getRazSocial();
+            prov[2] = proveedor.getMarca();
+            prov[3] = proveedor.getContacto();
+            prov[4] = proveedor.getDireccion();
+            modelo.addRow(prov);
+        }
+        
+        tblProveedores.setModel(modelo);
+    }
+
 }

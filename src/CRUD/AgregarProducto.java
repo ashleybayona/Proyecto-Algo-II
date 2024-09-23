@@ -355,6 +355,11 @@ public class AgregarProducto extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
+        // Actualiza la tabla de empleados
+        if (Principal.productos != null) {
+            Principal.tablaProductos.cargarProductos();
+        }
+        
         vaciarCampos(this);
         
         //para ver si se agregan

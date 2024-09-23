@@ -293,16 +293,16 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     }
     
     public static void vaciarCampos(Container container) {
-    // Recorre todos los componentes del contenedor
-    for (Component c : container.getComponents()) {
-        // Si es un JTextField, lo vacía
-        if (c instanceof JTextField) {
-            ((JTextField) c).setText("");
-        }
-        // Si el componente es un contenedor (como JPanel), llamamos recursivamente
-        if (c instanceof Container) {
-            vaciarCampos((Container) c);
+        // Recorre todos los componentes del contenedor
+        for (Component c : container.getComponents()) {
+            // Si es un JTextField, lo vacía
+            if (c instanceof JTextField) {
+                ((JTextField) c).setText("");
+            }
+            // Si el componente es un contenedor (como JPanel), llamamos recursivamente
+            if (c instanceof Container) {
+                vaciarCampos((Container) c);
+            }
         }
     }
-}
 }

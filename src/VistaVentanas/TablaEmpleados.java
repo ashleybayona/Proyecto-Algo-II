@@ -12,8 +12,6 @@ public class TablaEmpleados extends javax.swing.JPanel {
      * Creates new form tabla_empleados
      */
     
-    JpanelLoader jpload = new JpanelLoader();
-    
     public TablaEmpleados() {
         initComponents();
     }

@@ -319,5 +319,6 @@ public class EliminarEmpleado extends javax.swing.JFrame {
             AgregarEmpleado.vaciarCampos(this);
             return;
         }
+        System.out.println("Cant. empleados cargados: " + Principal.empleados.size());
     }
 }

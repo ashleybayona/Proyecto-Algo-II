@@ -1,7 +1,6 @@
 
 package VistaVentanas;
 import CRUD.*;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Controlador.Principal;
 import Modelo.Empleado;
@@ -12,42 +11,21 @@ import Modelo.Empleado;
 public class TablaEmpleados extends javax.swing.JPanel {
 
     /**
-     * Creates new form tabla_empleados
+     * Creates new form tabla_empleadoleados
      */
+    
+    DefaultTableModel modelo = new DefaultTableModel();
     
     public TablaEmpleados() {
         initComponents();
+        modelo.addColumn("DNI");
+        modelo.addColumn("Nombres");
+        modelo.addColumn("Apellidos");
+        modelo.addColumn("Puesto");
+        modelo.addColumn("Contacto");
+        modelo.addColumn("Contraseña");
     }
 
-    public void actualizarTabla() {
-        DefaultTableModel modelo = new DefaultTableModel() {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        modelo.setRowCount(0);
-        
-        modelo.addColumn("DNI EMPLEADO");
-        modelo.addColumn("NOMBRE EMPLEADO");
-        modelo.addColumn("CONTACTO");
-        modelo.addColumn("CORREO PERSONAL");
-        modelo.addColumn("CORREO EMPRESA");
-        modelo.addColumn("CONTRASEÑA");
-        
-        for (Empleado empleado : Principal.empleados) {
-            modelo.addRow(new Object[]{
-                empleado.getDNI(),
-                empleado.getNombres(),
-                empleado.getApellidos(),
-                empleado.getPuesto(),
-                empleado.getContacto(),
-                empleado.getContrasena()
-            });
-        }
-
-        jTable1.setModel(modelo);
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,14 +38,14 @@ public class TablaEmpleados extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblEmpleados = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(888, 421));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -83,14 +61,14 @@ public class TablaEmpleados extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
+        jScrollPane1.setViewportView(tblEmpleados);
+        if (tblEmpleados.getColumnModel().getColumnCount() > 0) {
+            tblEmpleados.getColumnModel().getColumn(0).setResizable(false);
+            tblEmpleados.getColumnModel().getColumn(1).setResizable(false);
+            tblEmpleados.getColumnModel().getColumn(2).setResizable(false);
+            tblEmpleados.getColumnModel().getColumn(3).setResizable(false);
+            tblEmpleados.getColumnModel().getColumn(4).setResizable(false);
+            tblEmpleados.getColumnModel().getColumn(5).setResizable(false);
         }
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -198,7 +176,28 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblEmpleados;
     // End of variables declaration//GEN-END:variables
-
+    
+    public void cargarEmpleados() {
+        System.out.println("aca tamo mami");
+        
+        while (modelo.getRowCount()>0) {
+            modelo.removeRow(0);
+        }
+        
+        for (Empleado empleado : Principal.empleados) {
+            Object emp[] = new Object[6];
+            emp[0] = empleado.getDNI();
+            emp[1] = empleado.getNombres();
+            emp[2] = empleado.getApellidos();
+            emp[3] = empleado.getPuesto();
+            emp[4] = empleado.getContacto();
+            emp[5] = empleado.getContrasena();
+            modelo.addRow(emp);
+        }
+        
+        tblEmpleados.setModel(modelo);
+    }
+    
 }

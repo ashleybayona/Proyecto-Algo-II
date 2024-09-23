@@ -275,5 +275,6 @@ public class EditarProveedor extends javax.swing.JFrame {
         AgregarProveedor.vaciarCampos(this);
         
         System.out.println(proveedorAEditar);
+        System.out.println("Cant. proveedores cargados: " + Principal.proveedores.size());
     }
 }

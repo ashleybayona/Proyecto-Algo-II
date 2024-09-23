@@ -8,12 +8,9 @@ import Modelo.Empleado;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import Controlador.Principal;
-import VistaVentanas.TablaEmpleados;
-import javax.swing.JTable;
 
 /**
  *
@@ -285,11 +282,15 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
+        // Actualiza la tabla de empleados
+        if (Principal.empleados != null) {
+            Principal.tablaEmpleados.cargarEmpleados();
+        }
+        
         vaciarCampos(this);
         
-        Principal.tablaEmpleados.actualizarTabla();
-        
         //para ver si se agregan
+        System.out.println("Cant. empleados cargados: " + Principal.empleados.size());
         System.out.println(Principal.empleados);
     }
     

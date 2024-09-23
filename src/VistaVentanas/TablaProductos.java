@@ -1,6 +1,5 @@
 
 package VistaVentanas;
-import CRUD.EditarProveedor;
 import CRUD.*;
 import javax.swing.table.DefaultTableModel;
 /**

@@ -8,7 +8,6 @@ import Controlador.Principal;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -244,6 +243,7 @@ public class AgregarProveedor extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Proveedor agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         
         vaciarCampos(this);
+        System.out.println("Cant. proveedores cargados: " + Principal.proveedores.size());
         System.out.println(Principal.proveedores);
     }
     

@@ -250,7 +250,7 @@ public class LogIn extends javax.swing.JFrame {
             Empleado empleadoActual = Principal.empleados.get(i);
             if (empleadoActual.getDNI().equalsIgnoreCase(dni) && empleadoActual.getContrasena().equals(contrasena)) {
                 empleadoEncontrado = empleadoActual;
-                break;
+                break; // Salir del bucle si se encuentra el empleado
             }
             i++;
         }

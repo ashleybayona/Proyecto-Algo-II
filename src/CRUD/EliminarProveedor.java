@@ -270,5 +270,6 @@ public class EliminarProveedor extends javax.swing.JFrame {
             AgregarProveedor.vaciarCampos(this);
             return;
         }
+        System.out.println("Cant. proveedores cargados: " + Principal.proveedores.size());
     }
 }

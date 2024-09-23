@@ -311,5 +311,6 @@ public class EditarEmpleado extends javax.swing.JFrame {
         AgregarEmpleado.vaciarCampos(this);
         
         System.out.println(empleadoAEditar);
+        System.out.println("Cant. empleados cargados: " + Principal.empleados.size());
     }
 }

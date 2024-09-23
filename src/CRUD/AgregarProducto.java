@@ -9,7 +9,6 @@ import Controlador.Principal;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -331,6 +330,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         vaciarCampos(this);
         
         //para ver si se agregan
+        System.out.println("Cant. productos cargados: " + Principal.productos.size());
         System.out.println(Principal.productos);
     }
     

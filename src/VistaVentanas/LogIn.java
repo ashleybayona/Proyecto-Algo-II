@@ -51,6 +51,11 @@ public class LogIn extends javax.swing.JFrame {
         jLabel2.setText("Contraseña");
 
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         txtContrasena.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
@@ -193,6 +198,10 @@ public class LogIn extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,7 +272,7 @@ public class LogIn extends javax.swing.JFrame {
 
         Empleado empleadoAIniciarSesion = buscarEmpleado(dni, contrasena);
         if (empleadoAIniciarSesion != null) {
-            UsuarioEmpleado ventanaEmpleado = new UsuarioEmpleado();
+            UsuarioEmpleado ventanaEmpleado = new UsuarioEmpleado(empleadoAIniciarSesion);
             ventanaEmpleado.setVisible(true);
             this.dispose();
         } else {

@@ -180,8 +180,6 @@ public class TablaEmpleados extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     
     public void cargarEmpleados() {
-        System.out.println("aca tamo mami");
-        
         while (modelo.getRowCount()>0) {
             modelo.removeRow(0);
         }

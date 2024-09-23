@@ -10,6 +10,7 @@ package Modelo;
  */
 public class Producto {
     private String ID;
+    private String Nombre;
     private String Proveedor;
     private String PrecioC;
     private String PrecioV;
@@ -18,9 +19,10 @@ public class Producto {
     private String Stock;
     private String Descripcion;
 
-    public Producto(String ID, String Proveedor, String PrecioC, String PrecioV, String Tipo, String Talla, String Stock, String Descripcion) {
+    public Producto(String ID, String Nombre, String Proveedor, String PrecioC, String PrecioV, String Tipo, String Talla, String Stock, String Descripcion) {
         //darle validación a cada campo
         this.ID = ID;
+        this.Nombre = Nombre;
         this.Proveedor = Proveedor;
         this.PrecioC = PrecioC;
         this.PrecioV = PrecioV;
@@ -32,7 +34,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Productos{" + "ID=" + ID + ", Proveedor=" + Proveedor + ", PrecioC=" + PrecioC + ", PrecioV=" + PrecioV + ", Tipo=" + Tipo + ", Talla=" + Talla + ", Stock=" + Stock + ", Descripcion=" + Descripcion + '}';
+        return "Productos{" + "ID=" + ID + ", Nombre=" + Nombre + ", Proveedor=" + Proveedor + ", PrecioC=" + PrecioC + ", PrecioV=" + PrecioV + ", Tipo=" + Tipo + ", Talla=" + Talla + ", Stock=" + Stock + ", Descripcion=" + Descripcion + '}';
     }    
     
     private boolean validarID(String id){
@@ -48,6 +50,10 @@ public class Producto {
         return ID;
     }
 
+    public String getNombre() {
+        return Nombre;
+    }
+
     public String getProveedor() {
         return Proveedor;
     }
@@ -60,11 +66,11 @@ public class Producto {
         return PrecioV;
     }
 
-    public String Tipo() {
+    public String getTipo() {
         return Tipo;
     }
 
-    public String Talla() {
+    public String getTalla() {
         return Talla;
     }
 
@@ -74,6 +80,10 @@ public class Producto {
 
     public String getDesc() {
         return Descripcion;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public void setProveedor(String Proveedor) {

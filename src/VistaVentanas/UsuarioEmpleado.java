@@ -5,6 +5,8 @@
 package VistaVentanas;
 
 import Controlador.Principal;
+import Modelo.Empleado;
+import Modelo.Producto;
 
 /**
  *
@@ -15,10 +17,15 @@ public class UsuarioEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form UsuarioCliente
      */
-    
+    private Empleado empleado;
     JpanelLoader jpload = new JpanelLoader();
     
     public UsuarioEmpleado() {
+        initComponents();
+    }
+    
+    public UsuarioEmpleado(Empleado empleado) {
+        this.empleado = empleado;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -193,7 +200,14 @@ public class UsuarioEmpleado extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CatalogoEmpleado catEmp = new CatalogoEmpleado();
         jpload.jPanelLoader(panelDatos, catEmp);
-        System.out.println(Principal.productos);
+        for (Producto producto : Principal.productos) {
+            System.out.println("--------------------------");
+            System.out.println("Nombre: " + producto.getNombre());
+            System.out.println("ID: " + producto.getID());
+            System.out.println("Stock: " + producto.getStock());
+            System.out.println("Precio: " + producto.getPrecioV());
+            System.out.println("--------------------------");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -201,7 +215,7 @@ public class UsuarioEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        MiPerfilEmpleado miPerfil = new MiPerfilEmpleado();
+        MiPerfilEmpleado miPerfil = new MiPerfilEmpleado(empleado);
         jpload.jPanelLoader(panelDatos, miPerfil);
     }//GEN-LAST:event_jButton5ActionPerformed
 

@@ -3,9 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ashle/Desktop/UNMSM/4TO%20CICLO/ALGORÍTMICA%20II/Proyecto-Algo-II/src/Controlador/Principal.java</file>
-            <file>file:/C:/Users/ashle/Desktop/UNMSM/4TO%20CICLO/ALGORÍTMICA%20II/Proyecto-Algo-II/src/CRUD/AgregarEmpleado.java</file>
-            <file>file:/C:/Users/ashle/Desktop/UNMSM/4TO%20CICLO/ALGORÍTMICA%20II/Proyecto-Algo-II/src/Controlador/Empleados.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/MiPerfilEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/UsuarioAdmin.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/AgregarProducto.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/EditarEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/CatalogoEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/EditarProveedor.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/EliminarEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/TablaProveedores.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/MiPerfilAdmin.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/AgregarEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/UsuarioEmpleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/TablaEmpleados.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/CatalogoCliente.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/JpanelLoader.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/TablaProductos.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/UsuarioCliente.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/Modelo/Empleado.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/Controlador/Principal.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/AgregarProveedor.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/Modelo/Proveedor.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/VistaVentanas/LogIn.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/Modelo/Producto.java</file>
+            <file>file:/C:/Users/SEGURIDAD/Documents/NetBeansProjects/Proyecto-Algo-II/src/CRUD/EliminarProveedor.java</file>
         </group>
     </open-files>
 </project-private>

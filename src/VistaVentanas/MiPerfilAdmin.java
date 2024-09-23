@@ -15,6 +15,11 @@ public class MiPerfilAdmin extends javax.swing.JPanel {
      */
     public MiPerfilAdmin() {
         initComponents();
+        jTextField1.setEditable(false);
+        jTextField2.setEditable(false);
+        jTextField3.setEditable(false);
+        jTextField4.setEditable(false);
+        jTextField5.setEditable(false);
     }
 
     /**
@@ -57,6 +62,7 @@ public class MiPerfilAdmin extends javax.swing.JPanel {
         jLabel7.setText("Dirección");
 
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jTextField1.setText("Juan Ricardo");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -64,12 +70,16 @@ public class MiPerfilAdmin extends javax.swing.JPanel {
         });
 
         jTextField2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jTextField2.setText("Administrador");
 
         jTextField3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jTextField3.setText("Tapia Carbajal");
 
         jTextField4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jTextField4.setText("+51 990 854 398");
 
         jTextField5.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jTextField5.setText("Lima, Perú");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,7 +109,7 @@ public class MiPerfilAdmin extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

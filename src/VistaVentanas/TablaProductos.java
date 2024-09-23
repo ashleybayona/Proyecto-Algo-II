@@ -42,11 +42,11 @@ public class TablaProductos extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Proveedor", "Precio c.", "Precio v.", "Tipo", "Talla", "Stock", "Descripción"
+                "ID", "Nombre", "Proveedor", "Precio c.", "Precio v.", "Tipo", "Talla", "Stock", "Descripción"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -63,6 +63,7 @@ public class TablaProductos extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
             jTable1.getColumnModel().getColumn(7).setResizable(false);
+            jTable1.getColumnModel().getColumn(8).setResizable(false);
         }
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N

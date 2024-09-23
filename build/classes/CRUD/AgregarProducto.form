@@ -23,45 +23,54 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="219" max="32767" attributes="0"/>
-                      <Component id="bttCancelarAgre" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="bttAgregar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" pref="87" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="219" max="32767" attributes="0"/>
+                              <Component id="bttCancelarAgre" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="bttAgregar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel5" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel5" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="jLabel3" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" pref="94" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="descField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="idField" max="32767" attributes="0"/>
+                                  <Component id="precioCField" max="32767" attributes="0"/>
+                                  <Component id="precioVField" max="32767" attributes="0"/>
+                                  <Component id="stockField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="provBox" alignment="0" pref="221" max="32767" attributes="0"/>
+                                  <Component id="tipoBox" max="32767" attributes="0"/>
+                                  <Component id="tallaBox" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nombreField" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="descField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="idField" max="32767" attributes="0"/>
-                          <Component id="precioCField" max="32767" attributes="0"/>
-                          <Component id="precioVField" max="32767" attributes="0"/>
-                          <Component id="stockField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="provBox" alignment="0" pref="221" max="32767" attributes="0"/>
-                          <Component id="tipoBox" max="32767" attributes="0"/>
-                          <Component id="tallaBox" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,7 +82,12 @@
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombreField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="provBox" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,7 +122,7 @@
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <Component id="descField" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bttAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bttCancelarAgre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -226,7 +240,7 @@
     <Component class="javax.swing.JComboBox" name="tipoBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Polo&quot;, &quot;Top&quot;, &quot;Casaca&quot;, &quot;Jeans&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Polo&quot;, &quot;Top&quot;, &quot;Blusa&quot;, &quot;Su&#xe9;ter&quot;, &quot;Casaca&quot;, &quot;Jeans&quot; })" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -252,6 +266,19 @@
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;&gt;()"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nombreField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

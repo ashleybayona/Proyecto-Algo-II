@@ -22,7 +22,7 @@ public class EditarProveedor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Editar proveedor");
         
-        dirField.addKeyListener(new java.awt.event.KeyAdapter() {
+        rucField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
             if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                 rellenarDatos();
@@ -239,6 +239,7 @@ public class EditarProveedor extends javax.swing.JFrame {
         //if else buscar ruc
         if(buscarRuc(ruc) != null){
             Proveedor proveedorDatos = buscarRuc(ruc);
+            System.out.println("aca pw");
             //que se rellenen los datos
             razSocField.setText(proveedorDatos.getRazSocial());
             marcaField.setText(proveedorDatos.getMarca());

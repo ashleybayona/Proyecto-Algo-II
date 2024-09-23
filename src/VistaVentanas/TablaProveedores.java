@@ -19,6 +19,7 @@ public class TablaProveedores extends javax.swing.JPanel {
     
     public TablaProveedores() {
         initComponents();
+        cargarProveedores();
         modelo.addColumn("RUC");
         modelo.addColumn("Razón Social");
         modelo.addColumn("Marca");

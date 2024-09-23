@@ -18,6 +18,7 @@ public class TablaEmpleados extends javax.swing.JPanel {
     
     public TablaEmpleados() {
         initComponents();
+        cargarEmpleados();
         modelo.addColumn("DNI");
         modelo.addColumn("Nombres");
         modelo.addColumn("Apellidos");

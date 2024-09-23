@@ -18,6 +18,13 @@ public class TablaProductos extends javax.swing.JPanel {
     
     public TablaProductos() {
         initComponents();
+        cargarProductos();
+        modelo.addColumn("DNI");
+        modelo.addColumn("Proveedor");
+        modelo.addColumn("Precio C.");
+        modelo.addColumn("Precio V.");
+        modelo.addColumn("Stock");
+        modelo.addColumn("Descripcion");
     }
 
     /**

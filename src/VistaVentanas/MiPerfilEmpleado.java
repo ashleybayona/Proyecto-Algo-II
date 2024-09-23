@@ -184,7 +184,7 @@ public class MiPerfilEmpleado extends javax.swing.JPanel {
         dniField.setEditable(false);
         nombresField.setText(empleado.getNombres());
         nombresField.setEditable(false);
-        apellidosField.setText(empleado.getNombres());
+        apellidosField.setText(empleado.getApellidos());
         apellidosField.setEditable(false);
         puestoField.setText(empleado.getPuesto());
         puestoField.setEditable(false);

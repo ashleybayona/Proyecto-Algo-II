@@ -19,11 +19,9 @@ public class Principal {
     public static ArrayList<Producto> productos = new ArrayList<>();
     
     public static LogIn login;
-    public static TablaEmpleados tablaEmpleados;
     
     public Principal () {
         login = new LogIn();
-        tablaEmpleados = new TablaEmpleados();
     }
     
     public void mostrarVentanaLogIn() {
@@ -41,3 +39,5 @@ public class Principal {
         principal.mostrarVentanaLogIn();
     }
 }
+
+

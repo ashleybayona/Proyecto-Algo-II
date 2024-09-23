@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import Controlador.Principal;
+import VistaVentanas.TablaEmpleados;
+import javax.swing.JTable;
 
 /**
  *
@@ -27,8 +29,6 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Agregar empleado");
-        
-        
         
         contraFieldAgre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

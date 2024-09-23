@@ -45,16 +45,18 @@ public class TablaEmpleados extends javax.swing.JPanel {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(888, 421));
 
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(300, 300));
+
         tblEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "DNI", "Nombre", "Apellido", "Puesto", "Contacto", "Contraseña"
+                "DNI", "Nombres", "Apellidos", "Cargo", "Contacto", "Contraseña"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -165,6 +167,7 @@ public class TablaEmpleados extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AgregarEmpleado agrEmp = new AgregarEmpleado();
+        cargarEmpleados();
         agrEmp.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -178,8 +181,9 @@ public class TablaEmpleados extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblEmpleados;
     // End of variables declaration//GEN-END:variables
-    
+
     public void cargarEmpleados() {
+        
         while (modelo.getRowCount()>0) {
             modelo.removeRow(0);
         }
@@ -197,5 +201,4 @@ public class TablaEmpleados extends javax.swing.JPanel {
         
         tblEmpleados.setModel(modelo);
     }
-    
 }

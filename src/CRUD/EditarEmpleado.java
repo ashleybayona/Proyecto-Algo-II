@@ -23,8 +23,6 @@ public class EditarEmpleado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Editar empleado");
         
-        EliminarEmpleado.llenarListaPrueba();
-        
         dniFieldEdit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
             if (evt.getKeyCode() == KeyEvent.VK_ENTER) {

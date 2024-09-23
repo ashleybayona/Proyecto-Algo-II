@@ -35,6 +35,7 @@ public class CatalogoEmpleado extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         catalogoLabel = new javax.swing.JLabel();
 
+        catalogoLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jScrollPane1.setViewportView(catalogoLabel);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -201,6 +201,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        Principal.tablaEmpleados.cargarEmpleados();
         this.dispose();
     }//GEN-LAST:event_bttAgregarActionPerformed
 
@@ -281,11 +282,6 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         Principal.empleados.add(empleado);
         
         JOptionPane.showMessageDialog(this, "Empleado agregado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
-        // Actualiza la tabla de empleados
-        if (Principal.empleados != null) {
-            Principal.tablaEmpleados.cargarEmpleados();
-        }
         
         vaciarCampos(this);
         

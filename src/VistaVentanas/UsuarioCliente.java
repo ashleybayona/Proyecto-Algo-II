@@ -172,13 +172,6 @@ public class UsuarioCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CatalogoCliente catCli = new CatalogoCliente();
         jpload.jPanelLoader(panelDatos, catCli);
-        for (Producto producto : Principal.productos) {
-            System.out.println("--------------------------");
-            System.out.println("Nombre: " + producto.getNombre());
-            System.out.println("Precio: " + producto.getPrecioV());
-            System.out.println("Cantidad: " + producto.getStock());
-            System.out.println("--------------------------");
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

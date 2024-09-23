@@ -4,6 +4,9 @@
  */
 package VistaVentanas;
 
+import Controlador.Principal;
+import Modelo.Producto;
+
 
 /**
  *
@@ -16,6 +19,7 @@ public class CatalogoCliente extends javax.swing.JPanel {
      */
     public CatalogoCliente() {
         initComponents();
+        llenarCatalogo();
     }
 
     /**
@@ -28,16 +32,22 @@ public class CatalogoCliente extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        catalogoLabel = new javax.swing.JLabel();
+
+        jScrollPane1.setViewportView(catalogoLabel);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 954, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 405, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -54,6 +64,21 @@ public class CatalogoCliente extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void llenarCatalogo() {
+        StringBuilder datosCatalogo = new StringBuilder("<html>");
+        for (Producto producto : Principal.productos) {
+            datosCatalogo.append("--------------------------<br>");
+            datosCatalogo.append("Nombre: ").append(producto.getNombre()).append("<br>");
+            datosCatalogo.append("Precio: ").append(producto.getPrecioV()).append("<br>");
+            datosCatalogo.append("Stock: ").append(producto.getStock()).append("<br>");
+        }
+        datosCatalogo.append("</html>");
+        
+        catalogoLabel.setText(datosCatalogo.toString());
+    }
 }
